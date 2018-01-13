@@ -29,6 +29,7 @@ public class ClientTCP {
 	Socket socket = null;
 	try {
 	    socket = new Socket("localhost", ServeurTCP.portEcoute);
+	    System.out.println("Vous êtes connecté au serveur");
 	} catch(UnknownHostException e) {
 	    System.err.println("Erreur sur l'hôte : " + e);
 	    System.exit(-1);

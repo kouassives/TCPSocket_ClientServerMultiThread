@@ -49,10 +49,10 @@ public class ThreadTcp extends Thread{
 			while(continuer) {
 				try{
 					if(!(message = input.readLine()).equals("0x23")) {
-						System.out.println("Recu du client : " + message);
+						System.out.println("Recu << " + message+ " >> du client "+socketClient.getInetAddress()+" "+socketClient.getPort());
 		
 						// Envoi
-						String msgAEnvoyer= message.toUpperCase()+socketClient.getInetAddress()+" "+socketClient.getPort();
+						String msgAEnvoyer= message.toUpperCase()+" "+socketClient.getInetAddress()+" "+socketClient.getPort();
 						System.out.println("Envoi : "+ msgAEnvoyer);
 						output.println(msgAEnvoyer);	
 						output.flush();
